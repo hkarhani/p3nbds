@@ -16,4 +16,6 @@ Docker Auto-build Source for Top Data Science Libraries on top of Alpine and Jup
  - scrapy 
 
  Simply use: 
-  docker run -d -
+  docker run --name p3nbds -d -p 8888:8888 hkarhani/p3nbds
+  
+ Then browse to http://docker-machine-ip:8888/ to begin programming using Jupyter Notebook and using Top Data Science Libraries. 
