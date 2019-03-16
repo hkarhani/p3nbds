@@ -2,10 +2,11 @@ FROM hkarhani/p3nb:latest
 
 MAINTAINER Hassan El Karhani <hkarhani@gmail.com>
 
-RUN apk update && apk --no-cache add freetype freetype-dev libpng jpeg-dev 
-RUN apk  add zlib-dev make cmake gcc g++ gfortran libffi-dev openssl openssl-dev
-RUN apk  add linux-headers openblas openblas-dev py3-numpy py3-scipy py3-lxml
-RUN pip3 install pandas
+RUN apk update && apk add --update freetype freetype-dev libpng jpeg-dev 
+RUN apk add --update zlib-dev make cmake gcc g++ gfortran libffi-dev openssl openssl-dev
+RUN apk add --update curl linux-headers openblas openblas-dev py3-numpy py3-scipy py3-lxml
+RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
+RUN pip3 install bottle numpy cython pandas
 
 WORKDIR /notebooks
 
